@@ -5,6 +5,12 @@ google.charts.load('current', {'packages':['corechart', 'table']}).then(drawChar
 //instead there is a promise to call drawchart above
 //google.charts.setOnLoadCallback(drawTable);
 
+
+const displayFoods = document.getElementById('food-display');
+
+console.log(displayFoods);
+
+
 //constructor for the food class
 class Food {
   constructor(name,servingSize, calories, fat, carbs, protein){
@@ -32,8 +38,8 @@ const userDailyLib = [];
 
 for(let i = 0; i < foodLibrary.length; i++){
   console.log(foodLibrary[i].name + foodLibrary[i].servingSize);
-  
 }
+
 /*
 //making of the food variables  for each in our library
 const salmon = new Food('Sockey Salmon', "6 oz", 300,15,0,36);
@@ -46,14 +52,36 @@ const sweetPotato = new Food('Sweet Potato', '328g', 249, 0.5, 58.1,4.5);
 const quinoa = new Food('Red Quinoa', '185g', 222, 3.6,39.4,8.1);
 */
 
-
+testSetFoodIntoDoc();
 console.log(foodLibrary);
 
 
+var c = document.getElementById('food-select').children;
+function initOptions(){
+  for(let i= 0; i< foodLibrary.length; i++){
+    let option = document.createElement('OPTION');
+    console.log(option);
+    option.textContent = foodLibrary[i].name;
+    document.getElementById('food-select').appendChild(option);
+    //instead of this we'll grab the food-select and append a child select element.name 
+    //as that new child elements textContent 
+  }
+}
+console.log(c);
 
 
 
-
+//testing how to grab the list of foods and print each one to the document
+//purpose behind is framework for selecting the select dropdown element and injecting
+// each food in the library as a new child list item inside of the parent ul, that makes up the
+//html select element
+function testSetFoodIntoDoc(){
+  let displayVar;
+  for(let i =0; i <foodLibrary.length; i++){
+    displayVar = displayFoods.textContent + foodLibrary[i].name + " ";
+    displayFoods.textContent= displayVar;
+  }
+}
 //reasoning behind drawing two charts at once:
 //each chart gets its information from the food that is added to daily eaten foods
 //one chart being the nutrients
