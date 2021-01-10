@@ -1,0 +1,10 @@
+.charts div{
+    display: inline-block;
+}
+
+.charts div:nth-child(2){
+    border-left: solid orange 4px;
+}
+.table div{
+    display: inline-block;
+}
