@@ -1,10 +1,19 @@
+//two options for loading and displaying the chart
+//either with a callback function
+//or the way I like
+//adding a promise to call the function after the load executes
+
 // Load the Visualization API and the corechart package.
-google.charts.load('current', {'packages':['corechart']});
+google.charts.load('current', {'packages':['corechart'/*, 'table'*/]}).then(drawChart);
+
 // Set a callback to run when the Google Visualization API is loaded.
-google.charts.setOnLoadCallback(drawChart);
+//google.charts.setOnLoadCallback(drawChart);
 
 
-
+//reasoning behind drawing two charts at once:
+//each chart gets its information from the food that is added to daily eaten foods
+//one chart being the nutrients
+//other chart being calories
 function drawChart() {
 /*
     //This is the alorithm for the data once we get there
