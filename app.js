@@ -54,6 +54,13 @@ const quinoa = new Food('Red Quinoa', '185g', 222, 3.6,39.4,8.1);
 
 testSetFoodIntoDoc();
 console.log(foodLibrary);
+
+
+var c = document.getElementById('food-select').children;
+console.log(c);
+
+
+
 //testing how to grab the list of foods and print each one to the document
 //purpose behind is framework for selecting the select dropdown element and injecting
 // each food in the library as a new child list item inside of the parent ul, that makes up the
@@ -64,7 +71,6 @@ function testSetFoodIntoDoc(){
     displayVar = displayFoods.textContent + foodLibrary[i].name + " ";
     displayFoods.textContent= displayVar;
   }
-  
 }
 //reasoning behind drawing two charts at once:
 //each chart gets its information from the food that is added to daily eaten foods
