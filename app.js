@@ -38,8 +38,8 @@ const userDailyLib = [];
 
 for(let i = 0; i < foodLibrary.length; i++){
   console.log(foodLibrary[i].name + foodLibrary[i].servingSize);
-  
 }
+
 /*
 //making of the food variables  for each in our library
 const salmon = new Food('Sockey Salmon', "6 oz", 300,15,0,36);
@@ -57,16 +57,16 @@ console.log(foodLibrary);
 
 
 var c = document.getElementById('food-select').children;
-for(let i= 0; i< foodLibrary.length; i++){
-  let option = document.createElement('OPTION');
-  console.log(option);
-  option.textContent = foodLibrary[i].name;
-  document.getElementById('food-select').appendChild(option);
-  //instead of this we'll grab the food-select and append a child select element.name 
-  //as that new child elements textContent
-  
+function initOptions(){
+  for(let i= 0; i< foodLibrary.length; i++){
+    let option = document.createElement('OPTION');
+    console.log(option);
+    option.textContent = foodLibrary[i].name;
+    document.getElementById('food-select').appendChild(option);
+    //instead of this we'll grab the food-select and append a child select element.name 
+    //as that new child elements textContent 
+  }
 }
-
 console.log(c);
 
 

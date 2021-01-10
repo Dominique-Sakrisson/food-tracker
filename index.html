@@ -7,7 +7,7 @@
     <title>Section 3: Javascript Language Basics</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-<body>
+<body onload="initOptions()">
   <header>
       <h1 >Diet Tracker with Macronutrient Calculator</h1>
       <nav>
@@ -36,25 +36,18 @@
 
 
   <div id="food-display"></div>
+<hr>
   <section>
-    <div >
-      <span><img src="assets/feather\bar-chart.svg" alt=""></span>
-      <h1 id="chartingTitle" class="inlineBlock">Food Charting</h1> 
+    <div>
+      <img src="assets/feather\bar-chart.svg" title="image of 3 vertical bars, representing a chart" alt="image of 3 vertical bars, representing a chart">
+      <h1>Food Charting</h1> 
       
-      <br>
-
+<!--Label for the select dropdown-->
       <label for="food"><span>Select your food</span></label>
-      <select name="food" id="food-select" required>
-          <option value="Sockey Salmon">salmon</option>
-          <option value="Green Lentils">lentils</option>
-          <option value="white rice">rice</option>
-          <option value="red quinoa">quinoa</option>
-          <option value="mcChicken">mcChicken</option>
-          <option value="ground beef 93%">ground beef 93%</option>
-          <option value="bacon grease">bacon grease</option>
-          <option value="sweet potato">sweet potato</option>
-      </select>
-
+<!-- This is the select dropdown,
+it has no option elements because they are injected from app.js-->
+      <select name="food" id="food-select" required></select>
+<!--buttons managing the functionality of the food nutrient calculator-->
       <button type="submit" onclick="foodAdd()">Add Food To Eaten</button> 
       <button onclick="drawChart(), avgCaloriesF(), 
           avgFatF(), avgCarbsF(), avgProF(), addTableRow()">Count nutrient averages</button>
