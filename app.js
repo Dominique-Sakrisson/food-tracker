@@ -1,43 +1,78 @@
-// Load Charts and the bar package.
-google.charts.load("current", { packages: ["bar"] });
-// Draw the bar charts when charts is loaded.
+// Load the Visualization API and the corechart package.
+google.charts.load('current', {'packages':['corechart']});
+// Set a callback to run when the Google Visualization API is loaded.
 google.charts.setOnLoadCallback(drawChart);
 
+
+
 function drawChart() {
+/*
+    //This is the alorithm for the data once we get there
+    //
     // Define the first chart to be drawn.
-    var data = google.visualization.arrayToDataTable([
+    var data1 = google.visualization.arrayToDataTable([
       ["Macro Type", "Consumed", "Goal", { role: "annotation" }],
       ["Carbs (g)", getTotalCarbs(), 237.5, "Carbs"],
       ["Fat (g)", getTotalFat(), 70, "Fat"],
       ["Protein (g)", getTotalPro(), 155, "Protein"],
     ]);
-    //options for first chart
-    var options = {
-      chart: {
-        title: "Nutrients to Daily Goal",
-        subtitle: "Carbohydrates, Fat and Protein Measured in grams",
-      },
-      bars: "horizontal",
-    };
-  
+
     //Define the 2nd chart to be drawn
-    var data2 = google.visualization.arrayToDataTable([
+     var data2 = google.visualization.arrayToDataTable([
       ["Calories", "Consumed", "Goal", { role: "annotation" }],
       ["Calories", getTotalCals(), 2200, "calories"],
     ]);
-    //options for 2nd chart
-    var options2 = {
-      chart: {
-        title: "Calories to Daily Goal",
-        subtitle: "Calories",
-      },
-      bars: "horizontal",
-    };
+*/
+//this is the data to get the charts going hard coded
+  var data1, data2;
   
-    // Instantiate and draw the chart.
-    var chart = new google.charts.Bar(document.getElementById("chart_1"));
-    chart.draw(data, options);
-    var chart2 = new google.charts.Bar(document.getElementById("chart_2"));
-    chart2.draw(data2, options2);
-  }
-  drawChart();
+  data1 = new google.visualization.DataTable();
+  data1.addColumn('string', 'Topping');
+  data1.addColumn('number', 'Slices');
+  data1.addColumn('number', 'calories');
+  data1.addRows([
+    ['Mushrooms', 3, 10],
+    ['Onions', 1, 11],
+    ['Olives', 1, 12],
+    ['Zuccini', 1, 13],
+    ['Pepperoni', 2, 14],
+  ]);
+
+  data2 = new google.visualization.DataTable();
+  data2.addColumn('string', 'Topping');
+  data2.addColumn('number', 'Slices');
+  data2.addColumn('number', 'calories');
+  data2.addRows([
+    ['Mushrooms', 5, 100],
+    ['Onions', 5, 110],
+    ['Olives', 5, 120],
+    ['Zuccini', 5, 130],
+    ['Pepperoni', 5, 140],
+  ]);
+
+  //options for first chart
+  var options = {
+    chart: {
+      title: "Nutrients to Daily Goal",
+      subtitle: "Carbohydrates, Fat and Protein Measured in grams",
+    },
+    bars: "horizontal",
+  };
+
+  //options for 2nd chart
+  var options2 = {
+    chart: {
+      title: "Calories to Daily Goal",
+      subtitle: "Calories",
+    },
+    bars: "horizontal",
+  };
+
+  // Instantiate and draw the chart.
+  var chart1 = new google.visualization.BarChart(document.getElementById("chart-1"));
+  var chart2 = new google.visualization.BarChart(document.getElementById("chart-2"));
+
+  chart1.draw(data1, options);
+  chart2.draw(data2, options2);
+}
+  
