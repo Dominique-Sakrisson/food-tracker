@@ -6,62 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Section 3: Javascript Language Basics</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" type="text/javascript" defer></script>
+    <script src="app.js" type="text/javascript" defer></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
 <body>
-    <header>
-        <h1 >Diet Tracker with Macronutrient Calculator</h1>
-        <nav>
-            <nav-item><a href="#./resources.html">Resources</a></nav-item>
-            <nav-item><a href="#./contact.html">Contact</a></nav-item>
-            <nav-item><a href="./inviteAFriend.html"><span>Invite a Friend</a></span></nav-item>
-            <nav-item><a href="./startup.html"><span>Get started</span>
-                <sup >(for free)</sup></span></a>
-            </nav-item>
-        </nav>
-    </header>
+  <header>
+      <h1 >Diet Tracker with Macronutrient Calculator</h1>
+      <nav>
+          <nav-item><a href="#./resources.html">Resources</a></nav-item>
+          <nav-item><a href="#./contact.html">Contact</a></nav-item>
+          <nav-item><a href="./inviteAFriend.html"><span>Invite a Friend</a></span></nav-item>
+          <nav-item><a href="./startup.html"><span>Get started</span>
+              <sup >(for free)</sup></span></a>
+          </nav-item>
+      </nav>
+  </header>
+  <section>
+      <p class="centerText">
+        This is your <span class="gold specialSpan"> <em>daily diet tracker</em></span>
+      </p>    
+      <p class="centerText instructions">  
+        <span class=>Set your diet goal for each category
+        </span>
+        You have a list of foods to choose from with their corresponding
+        serving sizes alongside each food
+        Once a food is selected the charts will update with the calories,
+        grams of fat, carbs and protein.
+      </p>
+  </section>
+  <section id="appBoxOuter">
+    <div id="foodSelector">
+      <span><img src="assets/feather\bar-chart.svg" alt=""></span>
+      <h1 id="chartingTitle" class="inlineBlock">Food Charting</h1> 
+      
+      <br>
 
-    <section>
-        <p class="centerText">
-          This is your <span class="gold specialSpan"> <em>daily diet tracker</em></span>
-        </p>    
-        <p class="centerText instructions">  
-          <span class=>Set your diet goal for each category
-          </span>
-          You have a list of foods to choose from with their corresponding
-          serving sizes alongside each food
-          Once a food is selected the charts will update with the calories,
-          grams of fat, carbs and protein.
-        </p>
-    </section>
+      <label for="food"><span>Select your food</span></label>
+      <select name="food" id="foodSelect" required>
+          <option value="Sockey Salmon">salmon</option>
+          <option value="Green Lentils">lentils</option>
+          <option value="white rice">rice</option>
+          <option value="red quinoa">quinoa</option>
+          <option value="mcChicken">mcChicken</option>
+          <option value="ground beef 93%">ground beef 93%</option>
+          <option value="bacon grease">bacon grease</option>
+          <option value="sweet potato">sweet potato</option>
+      </select>
 
-    <section id="appBoxOuter">
-        <div id="foodSelector">
-        <span><img src="feather\bar-chart.svg" alt=""></span>
-        <h1 id="chartingTitle" class="inlineBlock">Food Charting</h1> <br>
+      <button type="submit" onclick="foodAdd()">Add Food To Eaten</button> 
+      <button onclick="drawChart(), avgCaloriesF(), 
+          avgFatF(), avgCarbsF(), avgProF(), addTableRow()">Count nutrient averages</button>
+      <button onclick="removeLastFood()">Remove Last Food</button>
+      <button onclick="clearFoods()">Clear the list</button>
+    </div>
+  </section>
+  <section class="charts">
+    <div id="chart-1" style="width: 900px; height: 500px;">chart 1</div>
+    <div id="chart-2" style="width: 900px; height: 500px;"> chart 2</div>
+  </section>
 
-        <label for="food"><span>Select your food</span></label>
-        <select " name="food" id="foodSelect" required>
-            <option value="Sockey Salmon">salmon</option>
-            <option value="Green Lentils">lentils</option>
-            <option value="white rice">rice</option>
-            <option value="red quinoa">quinoa</option>
-            <option value="mcChicken">mcChicken</option>
-            <option value="ground beef 93%">ground beef 93%</option>
-            <option value="bacon grease">bacon grease</option>
-            <option value="sweet potato">sweet potato</option>
-        </select>
-
-        <button type="submit" onclick="foodAdd()">Add Food To Eaten</button> 
-        <button onclick="drawChart(), avgCaloriesF(), 
-            avgFatF(), avgCarbsF(), avgProF(), addTableRow()">Count nutrient averages</button>
-        <button onclick="removeLastFood()">Remove Last Food</button>
-        <button onclick="clearFoods()">Clear the list</button>
-      </div>
-    </section>
-
-    <footer>&COPY; Copyright 2020, Sermon Technologies</footer>
-    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  </body>
+  <footer>&COPY; Copyright 2020, Sermon Technologies</footer>
+</body>
 </html>
