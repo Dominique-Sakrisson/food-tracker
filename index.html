@@ -7,7 +7,7 @@
     <title>Section 3: Javascript Language Basics</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-<body onload="initOptions()">
+<body>
   <header>
       <h1 >Diet Tracker with Macronutrient Calculator</h1>
       <nav>
@@ -48,7 +48,7 @@
 it has no option elements because they are injected from app.js-->
       <select name="food" id="food-select" required></select>
 <!--buttons managing the functionality of the food nutrient calculator-->
-      <button type="submit" onclick="foodAdd()">Add Food To Eaten</button> 
+      <button id="add-food-button">Add Food To Eaten</button> 
       <button onclick="drawChart(), avgCaloriesF(), 
           avgFatF(), avgCarbsF(), avgProF(), addTableRow()">Count nutrient averages</button>
       <button onclick="removeLastFood()">Remove Last Food</button>
@@ -65,7 +65,7 @@ it has no option elements because they are injected from app.js-->
 
   <footer>&COPY; Copyright 2020, Sermon Technologies</footer>
 
-  <script src="app.js" type="text/javascript" defer></script>
+  <script src="app.js" type="module" defer></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </body>
 </html>

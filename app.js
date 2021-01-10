@@ -1,3 +1,5 @@
+import { addToEaten, userDailyLib } from './handlers.js';
+import {getAverages} from './utils.js';
 
 // Load the Visualization API and the corechart package.
 google.charts.load('current', {'packages':['corechart', 'table']}).then(drawChart).then(drawTable);
@@ -7,7 +9,7 @@ google.charts.load('current', {'packages':['corechart', 'table']}).then(drawChar
 
 
 const displayFoods = document.getElementById('food-display');
-
+const addFoodBtn = document.getElementById('add-food-button');
 console.log(displayFoods);
 
 
@@ -22,7 +24,7 @@ class Food {
     this.protein = protein;
   }
 }
-const foodLibrary = [
+export const foodLibrary = [
   //making of the food variables  for each in our library
   new Food('Sockey Salmon', "6 oz", 300,15,0,36),
   new Food('Lentils', '198g', 230, .8,39.9,17.9),
@@ -34,8 +36,9 @@ const foodLibrary = [
   new Food('Red Quinoa', '185g', 222, 3.6,39.4,8.1),
 ];
 
-const userDailyLib = [];
 
+
+//test
 for(let i = 0; i < foodLibrary.length; i++){
   console.log(foodLibrary[i].name + foodLibrary[i].servingSize);
 }
@@ -52,11 +55,16 @@ const sweetPotato = new Food('Sweet Potato', '328g', 249, 0.5, 58.1,4.5);
 const quinoa = new Food('Red Quinoa', '185g', 222, 3.6,39.4,8.1);
 */
 
+
+initOptions();
 testSetFoodIntoDoc();
 console.log(foodLibrary);
+addFoodBtn.addEventListener('click', addToEaten);
 
 
-var c = document.getElementById('food-select').children;
+//var c = document.getElementById('food-select').children;
+//console.log(c);
+
 function initOptions(){
   for(let i= 0; i< foodLibrary.length; i++){
     let option = document.createElement('OPTION');
@@ -67,7 +75,7 @@ function initOptions(){
     //as that new child elements textContent 
   }
 }
-console.log(c);
+
 
 
 
