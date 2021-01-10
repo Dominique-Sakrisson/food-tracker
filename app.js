@@ -5,6 +5,55 @@ google.charts.load('current', {'packages':['corechart', 'table']}).then(drawChar
 //instead there is a promise to call drawchart above
 //google.charts.setOnLoadCallback(drawTable);
 
+//constructor for the food class
+class Food {
+  constructor(name,servingSize, calories, fat, carbs, protein){
+    this.name = name;
+    this.servingSize = servingSize;
+    this.calories = calories;
+    this.fat = fat;
+    this.carbs = carbs;
+    this.protein = protein;
+  }
+}
+const foodLibrary = [
+  //making of the food variables  for each in our library
+  new Food('Sockey Salmon', "6 oz", 300,15,0,36),
+  new Food('Lentils', '198g', 230, .8,39.9,17.9),
+  new Food('Rice','186g', 242, .4, 53.2,4.4 ),
+  new Food('McChicken', '147g',430,23,41,14),
+  new Food('Ground Beef 93%', '112g', 170, 8, 0, 23),
+  new Food('Bacon Grease', '1tsp', 38.1,4.2,0,0),
+  new Food('Sweet Potato', '328g', 249, 0.5, 58.1,4.5),
+  new Food('Red Quinoa', '185g', 222, 3.6,39.4,8.1),
+];
+
+const userDailyLib = [];
+
+for(let i = 0; i < foodLibrary.length; i++){
+  console.log(foodLibrary[i].name + foodLibrary[i].servingSize);
+  
+}
+/*
+//making of the food variables  for each in our library
+const salmon = new Food('Sockey Salmon', "6 oz", 300,15,0,36);
+const lentils = new Food('Lentils', '198g', 230, .8,39.9,17.9);
+const rice = new Food('Rice','186g', 242, .4, 53.2,4.4 );
+const mcChicken = new Food('McChicken', '147g',430,23,41,14);
+const groundBeef = new Food('Ground Beef 93%', '112g', 170, 8, 0, 23);
+const baconGrease = new Food('Bacon Grease', '1tsp', 38.1,4.2,0,0);
+const sweetPotato = new Food('Sweet Potato', '328g', 249, 0.5, 58.1,4.5);
+const quinoa = new Food('Red Quinoa', '185g', 222, 3.6,39.4,8.1);
+*/
+
+
+console.log(foodLibrary);
+
+
+
+
+
+
 //reasoning behind drawing two charts at once:
 //each chart gets its information from the food that is added to daily eaten foods
 //one chart being the nutrients
