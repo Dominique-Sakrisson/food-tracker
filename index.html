@@ -49,10 +49,9 @@ it has no option elements because they are injected from app.js-->
       <select name="food" id="food-select" required></select>
 <!--buttons managing the functionality of the food nutrient calculator-->
       <button id="add-food-button">Add Food To Eaten</button> 
-      <button onclick="drawChart(), avgCaloriesF(), 
-          avgFatF(), avgCarbsF(), avgProF(), addTableRow()">Count nutrient averages</button>
-      <button onclick="removeLastFood()">Remove Last Food</button>
-      <button onclick="clearFoods()">Clear the list</button>
+      <button id="averages-button">Count nutrient averages</button>
+      <button id="remove-food-button">Remove Last Food</button>
+      <button id="clear-daily-list-button">Clear the list</button>
     </div>
   </section>
   <section class="charts">
