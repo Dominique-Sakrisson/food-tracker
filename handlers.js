@@ -1,7 +1,7 @@
 import {getAverages} from './utils.js';
 import {foodLibrary} from './app.js'
 
-export const userDailyLib = [];
+export let userDailyLib = [];
 
 export function addToEaten(event){
     const selector = document.getElementById("food-select");

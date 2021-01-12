@@ -37,22 +37,13 @@ export const foodLibrary = [
   new Food('Red Quinoa', '185g', 222, 3.6,39.4,8.1),
 ];
 
-
-
-
-
-
-
 const averages = avgUtils();
 console.log(averages[1]);
 console.log(displayFoods);
 
-
-
 //call some intial state setting functions
 initOptions(), testSetFoodIntoDoc();
 addFoodBtn.addEventListener('click', addToEaten);
-
 
 function initOptions(){
   for(let i= 0; i< foodLibrary.length; i++){
