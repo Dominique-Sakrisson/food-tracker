@@ -1,5 +1,5 @@
 import { addToEaten, userDailyLib } from './handlers.js';
-import {getAverages as avgUtils} from './utils.js';
+import {getAverages} from './utils.js';
 
 // Load the Visualization API and the corechart package.
 google.charts.load('current', {'packages':['corechart', 'table']}).then(drawChart).then(drawTable);
@@ -11,6 +11,7 @@ const displayFoods = document.getElementById('food-display');
 const addFoodBtn = document.getElementById('add-food-button');
 const averageBtn = document.getElementById('averages-button');
 const removeLastBtn = document.getElementById('remove-food-button');
+
 const clearListBtn = document.getElementById('clear-daily-list-button');
 
 //constructor for the food class
@@ -37,13 +38,17 @@ export const foodLibrary = [
   new Food('Red Quinoa', '185g', 222, 3.6,39.4,8.1),
 ];
 
-const averages = avgUtils();
+const averages = getAverages();
 console.log(averages[1]);
 console.log(displayFoods);
 
 //call some intial state setting functions
 initOptions(), testSetFoodIntoDoc();
+
+
+
 addFoodBtn.addEventListener('click', addToEaten);
+
 
 function initOptions(){
   for(let i= 0; i< foodLibrary.length; i++){

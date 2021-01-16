@@ -1,6 +1,8 @@
 import {getAverages} from './utils.js';
 import {foodLibrary} from './app.js'
 
+const averagesDisplay = document.getElementById('display-averages');
+
 export let userDailyLib = [];
 
 export function addToEaten(event){
@@ -15,8 +17,9 @@ export function addToEaten(event){
             //values from averages will be used to populat the tables and graphs data 
             //eventually used to weigh against each new food to assign it a boolean of Ishighcal,IshighFat,isHighcarb etc..
             //beyond that, program will be able to reccomend foods of higher of whichever nutrient youre low on for the day, need more fat? it will recommend foods[i].isHighFat  
-            console.log(getAverages() + 'averages');
+            averagesDisplay.textContent = (getAverages() + 'averages');
             console.log(userDailyLib);
+            return getAverages();
         }
     }
 }
