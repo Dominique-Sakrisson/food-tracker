@@ -1,4 +1,4 @@
-import { addToEaten, userDailyLib } from './handlers.js';
+import { addToEaten, userDailyLib, setAverageDisplay } from './handlers.js';
 import {getAverages} from './utils.js';
 
 // Load the Visualization API and the corechart package.
@@ -11,7 +11,6 @@ const displayFoods = document.getElementById('food-display');
 const addFoodBtn = document.getElementById('add-food-button');
 const averageBtn = document.getElementById('averages-button');
 const removeLastBtn = document.getElementById('remove-food-button');
-
 const clearListBtn = document.getElementById('clear-daily-list-button');
 
 //constructor for the food class
@@ -46,9 +45,8 @@ console.log(displayFoods);
 initOptions(), testSetFoodIntoDoc();
 
 
-
-addFoodBtn.addEventListener('click', addToEaten);
-
+addFoodBtn.addEventListener('click', addToEaten, setAverageDisplay);
+averageBtn.addEventListener('click', setAverageDisplay);
 
 function initOptions(){
   for(let i= 0; i< foodLibrary.length; i++){
@@ -60,6 +58,8 @@ function initOptions(){
     //as that new child elements textContent 
   }
 }
+
+
 //testing how to grab the list of foods and print each one to the document
 //purpose behind is framework for selecting the select dropdown element and injecting
 // each food in the library as a new child list item inside of the parent ul, that makes up the
@@ -67,7 +67,7 @@ function initOptions(){
 function testSetFoodIntoDoc(){
   let displayVar;
   for(let i =0; i <foodLibrary.length; i++){
-    displayVar = displayFoods.textContent + foodLibrary[i].name + " ";
+    displayVar = displayFoods.textContent + foodLibrary[i].name + ", ";
     displayFoods.textContent= displayVar;
   }
 }
@@ -94,7 +94,7 @@ export function drawChart() {
     ]);
 */
 //this is the data to get the charts going hard coded
-  var data1, data2;
+  let data1, data2;
   
   data1 = new google.visualization.DataTable();
   data1.addColumn('string', 'Topping');
