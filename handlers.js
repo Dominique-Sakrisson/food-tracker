@@ -13,6 +13,7 @@ export function addToEaten(event){
     for(let i =0; i <foodLibrary.length; i++){
         if(selectedFood === foodLibrary[i].name){
             userDailyLib.push(foodLibrary[i]);
+            
             //very temporarilly testing the averages output to console here
             //values from averages will be used to populat the tables and graphs data 
             //eventually used to weigh against each new food to assign it a boolean of Ishighcal,IshighFat,isHighcarb etc..
