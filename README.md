@@ -6,4 +6,4 @@ currently there is a shallow selection of foods for testing purposes, and the ch
 all the interaction with the user is logged to the console. 
 
 
-## Most recent updated branch is going to be the dedv branch
+## Most recent updated branch is going to be the dev branch
